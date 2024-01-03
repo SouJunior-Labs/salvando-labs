@@ -11,6 +11,7 @@ import ProductView from '../views/product/ProductView.vue'
 import ProductRegistryView from '../views/product/RegistryView.vue'
 
 // squad 
+import SquadsView from '../views/squad/SquadsView.vue'
 import SquadView from '../views/squad/SquadView.vue'
 import SquadCreateView from '../views/squad/CreateView.vue'
 
@@ -38,12 +39,12 @@ const router = createRouter({
       component: ProfileView
     },
     {
-        path: '/products',
-        name: 'products',
-        component: ProductsView,
-        meta : {
-            auth: true
-        }
+      path: '/products',
+      name: 'products',
+      component: ProductsView,
+      meta : {
+          auth: true
+      }
     },
     {
       path: '/product/1',
@@ -62,9 +63,15 @@ const router = createRouter({
         }
     },
     {
-      path: '/squad',
-      name: 'squad',
-      component: SquadView
+      path: '/squads',
+      name: 'squads',
+      component: SquadsView
+    },
+    {
+      path: '/squad/:id',
+      name: 'squad-by-id',
+      component: SquadView,
+      props: true, 
     },
     {
       path: '/squad/create',
